@@ -1,0 +1,28 @@
+//
+
+/*
+**  ftest(const ...)
+**
+**  Purpose:
+**    	Perform an f-Test to test for common factor restrictions
+**
+**  Inputs:
+**
+**
+**  Output:
+**	  	
+**
+**  Return value:
+**	  	
+*/
+ftest(const mX, const vY, const avpar_unrest)
+{ 
+	decl dussr, dssr, br;
+
+	// Estimate (22) D&McK by OLS
+	br = olsc(vY, mX, &avpar_unrest[0]);
+	dussr = (vY - mX*avpar_unrest[0])'(vY - mX*avpar_unrest[0]);
+
+	// Estimate (21) D&McK by nonlinear least squares
+	return br;
+}
